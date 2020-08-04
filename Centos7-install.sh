@@ -4,17 +4,7 @@ yum -y update
 
 yum install -y epel-release
 
-yum install -y nginx 
-
-systemctl start nginx
-
-systemctl enable nginx
-
-sed -i "s/root         \/usr\/share\/nginx\/html/root         \/usr\/local\/blog\/public/g" /etc/nginx/nginx.conf
-
-service nginx restart
-
-curl --silent --location https://rpm.nodesource.com/setup_5.x |bash -
+curl --silent --location https://rpm.nodesource.com/setup_12.x |bash -
 
 yum install -y nodejs
 
